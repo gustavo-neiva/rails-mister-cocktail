@@ -1,3 +1,9 @@
+<head>
+  <!-- Add these line for detecting device width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
 <div class="header">
   <h1><%= @cocktail.name %></h1>
     <div class="button">
@@ -6,7 +12,7 @@
 </div>
 <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fit%>
 <ul><% @cocktail.doses.each do |dose| %>
-<li><%= dose.description + " - " + dose.ingredient.name%> <%=link_to "Delete", dose_path(dose) , method: :delete, class: "btn btn-danger" %></li>
+<li><%= dose.description + " - " + dose.ingredient.name%> <%=link_to "Delete", dose_path(dose) , method: :delete, class: "btn btn-danger btn-xs" %></li>
     <%end%></ul>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
@@ -15,3 +21,4 @@
   <%= f.button :submit, class: "btn btn-default" %>
 <% end %>
 <%= link_to "Return", root_path, class: "btn btn-default"%>
+</body>

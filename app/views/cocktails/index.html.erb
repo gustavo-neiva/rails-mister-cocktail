@@ -1,3 +1,9 @@
+<head>
+  <!-- Add these line for detecting device width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
 <div class="header">
   <h1> Hangover Cocktails <small> - powered by RoR</small></h1>
 </div>
@@ -5,7 +11,7 @@
   <div class="col-sm-8">
     <div class="list-group">
       <% @cocktails.each do |cocktail| %>
-          <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-default", class: "list-group-item" %>
+            <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-default", class: "list-group-item" %>
         <% end %>
     </div>
   </div>
@@ -19,4 +25,4 @@
       <% end %>
     </div>
   </div>
-</div>
+ </body>

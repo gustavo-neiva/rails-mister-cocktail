@@ -14,17 +14,27 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  background-color: #FEE140;
+  background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+}
+
 ul {
   list-style-type: none;
 }
 
 .header {
-    position: relative;
-    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
 }
 
 .button {
-    position: absolute;
-    right: 10px;
-    top: 5px;
+  padding-top: 15px;
+  padding-left: 10px;
 }

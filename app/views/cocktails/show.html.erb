@@ -1,7 +1,7 @@
 <h1><%= @cocktail.name %></h1>
-
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fit%>
 <ul><% @cocktail.doses.each do |dose| %>
-<li><%= dose.description + " - " + dose.ingredient.name %></li>
+<li><%= dose.description + " | " + dose.ingredient.name %></li>
 <%end%></ul>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>

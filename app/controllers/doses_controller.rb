@@ -18,6 +18,6 @@ class DosesController < ApplicationController
   private
 
   def doses_params
-    params.require(:dose).permit(:description)
+    params.require(:dose).permit(:description, :photo, :photo_cache)
   end
 end

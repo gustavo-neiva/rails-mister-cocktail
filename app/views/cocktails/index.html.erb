@@ -12,6 +12,8 @@
     <div class="col-sm-4">
       <%= simple_form_for @cocktail do |f| %>
       <%= f.input :name, label: false %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
       <%= f.button :submit %>
       <% end %>
     </div>

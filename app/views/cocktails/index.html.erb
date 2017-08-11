@@ -1,14 +1,19 @@
+<div class="header">
+  <h1> Hangover Cocktails <small> - powered by RoR</small></h1>
+</div>
 <div class="row">
-<div class="col-sm-12 col-md-6 col-lg-4">
-<% @cocktails.each do |cocktail| %>
-    <div class="card">
-    <h2><%= cocktail.name %></h2>
-    <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-    <% end %>
+  <div class="col-sm-8">
+    <div class="list-group">
+      <% @cocktails.each do |cocktail| %>
+          <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-default", class: "list-group-item" %>
+        <% end %>
     </div>
   </div>
-    <%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit %>
-    <% end %>
+    <div class="col-sm-4">
+      <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name, label: false %>
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
 </div>

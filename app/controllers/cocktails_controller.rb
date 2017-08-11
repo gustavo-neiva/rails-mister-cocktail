@@ -7,6 +7,10 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new
   end
 
+  def new
+    @cocktail = Cocktail.new
+  end
+
   def show
     @ingredients = Ingredient.order(:name).all
     @dose = Dose.new
@@ -23,6 +27,7 @@ class CocktailsController < ApplicationController
 
   def destroy
     @cocktail.destroy
+    redirect_to cocktails_path
   end
 
   private

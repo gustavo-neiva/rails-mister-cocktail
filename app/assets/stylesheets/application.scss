@@ -13,3 +13,18 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+ul {
+  list-style-type: none;
+}
+
+.header {
+    position: relative;
+    text-align: left;
+}
+
+.button {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}

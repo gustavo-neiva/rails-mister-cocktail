@@ -15,6 +15,11 @@ class DosesController < ApplicationController
     end
   end
 
+  def delete
+    @dose.destroy
+    redirect_to cocktail_dose_path(@dose.cocktail)
+  end
+
   private
 
   def doses_params

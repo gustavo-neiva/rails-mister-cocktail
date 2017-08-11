@@ -1,13 +1,17 @@
-<h1><%= @cocktail.name %></h1>
+<div class="header">
+  <h1><%= @cocktail.name %></h1>
+    <div class="button">
+      <%= link_to "Delete", cocktail_path, method: :delete, class: "btn btn-danger" %>
+    </div>
+</div>
 <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fit%>
 <ul><% @cocktail.doses.each do |dose| %>
-<li><%= dose.description + " | " + dose.ingredient.name %></li>
-<%end%></ul>
+<li><%= dose.description + " - " + dose.ingredient.name%> <%=link_to "Delete", dose_path(dose) , method: :delete, class: "btn btn-danger" %></li>
+    <%end%></ul>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.input :ingredient_id, collection: @ingredients %>
-  <%= f.submit%>
+  <%= f.button :submit, class: "btn btn-default" %>
 <% end %>
-<%= link_to "Delete", cocktail_path, method: :delete, class: "btn btn-danger" %>
 <%= link_to "Return", root_path, class: "btn btn-default"%>
